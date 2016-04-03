@@ -35,15 +35,20 @@ window.onload = function () {
 
 //putting planet information into my dropdown menu
     var populateSelect = function (planets){
+        // console.log( planets)
         var dropDown = document.querySelector('#planets');
             planets.forEach(function (planet, index){
+                
             // planet.index = index;
-            var option = document.createElement("option");
+            var option = document.createElement('option');
+            //ERROR it doesnt like the  '.' I have no idea why!
             var option.value = index.toString();
-            console.log('option')
+
             option.innerText = planet.name;
-            dropDown.appendChild(options);
+            dropDown.appendChild(option);
         });
+
+
             dropDown.style.display = 'block';
             dropDown.addEventListener('change', function(){
                 var index = this.value;
