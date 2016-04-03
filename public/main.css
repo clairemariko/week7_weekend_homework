@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html>
+body{
+  background-image: url("../images/starwars.jpeg");
+  background-size: cover;
+  
+  background-position: center center fixed;
+}
 
-<head>
-    <title>Startpoint</title>
-    <link rel='stylesheet' type='text/css' href='main.css'>
-    
-</head>
 
-<body>
-    <select>
-    </select>
-    
-    <div>
-        <p></p>
-        <p></p>
-        <p></p>
-    </div>
-    <div>
-    
-
-    </div>
-
-    <script src="http://swapi.co/api/people/4/"></script>
-    <script src="vader.js"></script>
-    <script src='app.js'></script>
-</body>
-
-</html>

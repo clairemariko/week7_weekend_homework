@@ -1,3 +1,5 @@
+//the starwars api also includes a connection to the people api. looking into how to getting this information//
+
 window.onload = function () {
     //WHERE IS IT GETTING SENT TO - STAR WARS API
     var url = 'http://swapi.co/api/planets/'
@@ -31,28 +33,32 @@ window.onload = function () {
         document.querySelector('#info').style.display = 'block';
     }
 
+//putting planet information into my dropdown menu
+    var populateSelect = function (planets){
+        var dropDown = document.querySelector('#planets');
+            planets.forEach(function (planet, index){
+            // planet.index = index;
+            var option = document.createElement("option");
+            var option.value = index.toString();
+            console.log('option')
+            option.innerText = planet.name;
+            dropDown.appendChild(options);
+        });
+            dropDown.style.display = 'block';
+            dropDown.addEventListener('change', function(){
+                var index = this.value;
+                var planet = planets[index];
+                updateDisplay(planet);
+                localStorage.setItem("selectedPlanet", index);
+            });
+    }
 
-// var populateSelect = function (countries) {
-//     var parent = document.querySelector('#countries');
-//     countries.forEach(function (country, index) {
-//         // country.index = index;
-//         var option = document.createElement("option");
-//         option.value = index.toString();
-//         option.innerText = country.name;
-//         parent.appendChild(option);
-//     });
-//     parent.style.display = 'block';
-//     parent.addEventListener('change', function () {
-//         var index = this.value;
-//         var country = countries[index];
-//         updateDisplay(country);
-//         localStorage.setItem("selectedCountry", index);
-//     });
-//  }
+    var updateDisplay = function (planet){
+        var tags = document.querySelectorAll('#info p');
+        tags[0].innerText = planet.name;
+        tags[1]. innerText = planet.terrain;
+        tags[2]. innerText = planet.climate;
+    }
 
-// var updateDisplay = function (country) {
-//     var tags = document.querySelectorAll('#info p');
-//     tags[0].innerText = country.name;
-//     tags[1].innerText = country.population;
-//     tags[2].innerText = country.capital;
-//  }
+
+
