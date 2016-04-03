@@ -1,6 +1,8 @@
 //the starwars api also includes a connection to the people api. looking into how to getting this information//
 
 window.onload = function () {
+   
+
     //WHERE IS IT GETTING SENT TO - STAR WARS API
     var url = 'http://swapi.co/api/planets/'
     //MAKE A REQUEST
@@ -13,8 +15,9 @@ window.onload = function () {
             var jsonString = request.responseText;
             var planets = JSON.parse(jsonString);
             main(planets);
-            populateSelect(planets);
+            // populateSelect(planets);
         }
+
     }
     request.send(null);
 };
@@ -35,21 +38,20 @@ window.onload = function () {
         document.querySelector('#info').style.display = 'block';
     }
 
-//putting planet information into my dropdown menu
-    var populateSelect = function (planets){
+
+
+// putting planet information into my dropdown menu
+//planets.forEach is undefined as i know i need to do planets.results but it doesnt work
+    var populateSelect = function (planets) {
         // console.log( planets)
         var dropDown = document.querySelector('#planets');
             planets.forEach(function (planet, index){
-                
-            // planet.index = index;
-            var option = document.createElement('option');
-            //ERROR it doesnt like the  '.' I have no idea why!
-            var option.value = index.toString();
-
-            option.innerText = planet.name;
-            dropDown.appendChild(option);
+        var option = document.createElement('option');
+        
+             option.value = index.toString();
+             option.innerText = planet.name;
+             dropDown.appendChild(option);
         });
-
 
             dropDown.style.display = 'block';
             dropDown.addEventListener('change', function(){
