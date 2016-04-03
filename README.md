@@ -6,7 +6,7 @@ Fetch information from an API. Display/Analyse the information - DOM/Charts/Maps
 <h5>personal goal</h5>
 <b>main</b>
 practise using apis
-understand and become flunet in DOM requests
+understand and become fluent in DOM requests
 
 <b>further</b>
 using charts to display the information

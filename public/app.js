@@ -11,15 +11,17 @@ window.onload = function () {
     request.onload = function () {
         if (request.status === 200) {
             var jsonString = request.responseText;
-            var planetss = JSON.parse(jsonString);
+            var planets = JSON.parse(jsonString);
             main(planets);
+            populateSelect(planets);
         }
     }
     request.send(null);
 };
+//in the windows.onload is where you execute your functions you have degined below so remeber to call them !
 
    
-// //this is setting it up to where it is going to start! include map and drop down!
+
 //a drop down of all planets! this is where you i might add a pie chart if time
     var main = function (planets){
         populateSelect(planets);
