@@ -5,7 +5,7 @@ var ChartData= function(){
         {
         name: "Alderaan",
         climate: "temperate",
-        terrain: "grasslands"
+        terrain: "grasslands",
         y: 14,
         color: "#ffac33"
         },
@@ -19,7 +19,7 @@ var ChartData= function(){
         {
           name: "Hoth",
           climate: "frozen",
-          terrain: "ice caves"
+          terrain: "ice caves",
           y:1,
           color: "#00ba2f"
         },
@@ -27,7 +27,7 @@ var ChartData= function(){
           name: "Dagoboth",
           climate: "murky",
           terrain: "swamp",
-          y: 15
+          y: 15,
           color: "#7d0541"
         },
         {

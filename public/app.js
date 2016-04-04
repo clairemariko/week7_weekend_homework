@@ -14,7 +14,14 @@ window.onload = function () {
         if (request.status === 200) {
             var jsonString = request.responseText;
             var planets = JSON.parse(jsonString);
-            main(planets);
+            main(planets.results);
+            //pie charts
+            var data = new ChartData();
+            var containers = new ChartContainers();
+            var types = new ChartTypes();
+
+            var title = "Different Planets";
+            new Chart(title, types.pie, containers.pie, data.pie);
             // populateSelect(planets);
         }
 
@@ -31,7 +38,7 @@ window.onload = function () {
         var saved = localStorage.getItem("selectedPlanet");
         var selected = planets[saved];
         if(saved){
-            selected = JSON.parse(cached);
+            selected = JSON.parse(saved);
             document.querySelector('#planets').value = saved;
             updateDisplay(planets[saved]);
         }
